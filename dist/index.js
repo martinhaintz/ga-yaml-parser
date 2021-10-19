@@ -5801,7 +5801,8 @@ async function run() {
             const keys = Object.keys(flattened_object)
             keys.forEach(current => {
                 if (flattened_object[current] != null && flattened_object[current] != "")
-                    core.exportVariable(current, flattened_object[current]);
+                    // core.exportVariable(current, flattened_object[current]);
+                    core.setOutput(current, flattened_object[current]);
             });
         }
     } catch (error) {
