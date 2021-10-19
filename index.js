@@ -9,7 +9,8 @@ async function run() {
         const flattened_object = flattenObject(content)
         const keys = Object.keys(flattened_object)
         keys.forEach(current => {
-            core.setOutput(current, flattened_object[current]);
+            if (flattened_object[current] != null)
+                core.setOutput(current, flattened_object[current]);
         });
     } catch (error) {
         core.setFailed(error.message);
