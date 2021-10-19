@@ -14,7 +14,7 @@ test('test parse action.yaml file', () => {
 })
 
 test('test parse Google AppEngine test.yaml file', () => {
-  process.env['INPUT_FILE'] = "test_gae.yaml";
+  process.env['INPUT_FILE'] = "./testfiles/test_gae.yaml";
 
   const result = cp.execSync(`node ${ip}`, { env: process.env }).toString();
 
@@ -25,7 +25,7 @@ test('test parse Google AppEngine test.yaml file', () => {
 })
 
 test('test parse one parameter at Google AppEngine test.yaml file', () => {
-  process.env['INPUT_FILE'] = "test_gae.yaml";
+  process.env['INPUT_FILE'] = "./testfiles/test_gae.yaml";
   process.env['INPUT_KEY'] = "runtime";
 
   const result = cp.execSync(`node ${ip}`, { env: process.env }).toString();
