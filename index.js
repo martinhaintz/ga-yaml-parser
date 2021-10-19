@@ -9,9 +9,9 @@ async function run() {
         const content = yaml.load(fs.readFileSync(file, 'utf8'));
         const flattened_object = flattenObject(content)
         if (key)
-            core.setOutput("value", flattened_object[key]);
+            core.setOutput("result", flattened_object[key]);
         else {
-            core.setOutput("value", "look at the envs.");
+            core.setOutput("result", "look at the envs.");
             const keys = Object.keys(flattened_object)
             keys.forEach(current => {
                 if (flattened_object[current] != null && flattened_object[current] != "")

@@ -9,7 +9,7 @@ inputs:
     required: false 
     default: ""
 outputs:
-  value: # output will be available to future steps
+  result: # output will be available to future steps
     description: 'value of flattened key if specified.'
 runs:
   using: 'node12'
