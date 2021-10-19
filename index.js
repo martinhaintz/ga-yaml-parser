@@ -4,14 +4,20 @@ const yaml = require('js-yaml');
 
 async function run() {
     try {
-        const file = core.getInput('file', { required: false });
+        const file = core.getInput('file', { required: true });
+        const key = core.getInput('key', { required: false });
         const content = yaml.load(fs.readFileSync(file, 'utf8'));
         const flattened_object = flattenObject(content)
-        const keys = Object.keys(flattened_object)
-        keys.forEach(current => {
-            if (flattened_object[current] != null && flattened_object[current] != "")
-                core.setOutput(current, flattened_object[current]);
-        });
+        if (key)
+            core.setOutput("value", flattened_object[key]);
+        else {
+            core.setOutput("value", "look at the envs.");
+            const keys = Object.keys(flattened_object)
+            keys.forEach(current => {
+                if (flattened_object[current] != null && flattened_object[current] != "")
+                    core.exportVariable(current, flattened_object[current]);
+            });
+        }
     } catch (error) {
         core.setFailed(error.message);
     }

@@ -23,3 +23,13 @@ test('test parse Google AppEngine test.yaml file', () => {
   expect(result).toContain("automatic_scaling")
   expect(result).toContain("gunicorn -b :$PORT main:app -w 1 -c gunicorn_conf.py")
 })
+
+test('test parse one parameter at Google AppEngine test.yaml file', () => {
+  process.env['INPUT_FILE'] = "test_gae.yaml";
+  process.env['INPUT_KEY'] = "runtime";
+
+  const result = cp.execSync(`node ${ip}`, { env: process.env }).toString();
+
+  expect(result).toContain("python39")
+
+})

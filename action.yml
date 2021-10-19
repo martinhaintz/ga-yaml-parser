@@ -4,7 +4,13 @@ inputs:
   file:
     description: 'YAML file which should parsed'
     required: true 
-  # outputs will be dynamically built based on the yaml file
+  key:
+    description: 'YAML file which should parsed'
+    required: false 
+    default: ""
+outputs:
+  value: # output will be available to future steps
+    description: 'value of flattened key if specified.'
 runs:
   using: 'node12'
   main: 'dist/index.js'
