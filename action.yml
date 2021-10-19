@@ -1,0 +1,11 @@
+name: 'YAML Parser'
+description: 'Parses YAML file and returns as flattened object in output'
+inputs:
+  file:
+    description: 'YAML file which should parsed'
+    required: true 
+outputs:
+  # outputs will be dynamically built based on the yaml file
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
