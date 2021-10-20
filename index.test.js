@@ -17,7 +17,7 @@ test('test parse action.yaml file', () => {
 })
 
 test('test parse Google AppEngine test.yaml file', () => {
-  process.env['INPUT_FILE'] = "./testfiles/test_gae.yaml";
+  process.env['INPUT_FILE'] = "testfiles/test_gae.yaml";
   process.env['INPUT_DELIMITER'] = "_";
   process.env['INPUT_EXPORT_TO_ENVS'] = true;
 
