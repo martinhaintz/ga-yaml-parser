@@ -8,6 +8,18 @@ inputs:
     description: 'YAML file which should parsed'
     required: false 
     default: ""
+  delimiter:
+    description: 'delimiter for flattened keys. "." is not allowed for "export_to_envs=true"'
+    required: false 
+    default: "_"
+  export_to_envs:
+    description: 'exports tha flattened object to environment variables'
+    required: false 
+    default: false
+  return_to_outputs:
+    description: 'exports tha flattened object to outputs variables'
+    required: false 
+    default: true
 outputs:
   result: # output will be available to future steps
     description: 'value of flattened key if specified.'
