@@ -27,7 +27,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.issue = exports.issueCommand = void 0;
-const os = __importStar(__nccwpck_require__(87));
+const os = __importStar(__nccwpck_require__(37));
 const utils_1 = __nccwpck_require__(278);
 /**
  * Commands
@@ -138,8 +138,8 @@ exports.getIDToken = exports.getState = exports.saveState = exports.group = expo
 const command_1 = __nccwpck_require__(351);
 const file_command_1 = __nccwpck_require__(717);
 const utils_1 = __nccwpck_require__(278);
-const os = __importStar(__nccwpck_require__(87));
-const path = __importStar(__nccwpck_require__(622));
+const os = __importStar(__nccwpck_require__(37));
+const path = __importStar(__nccwpck_require__(17));
 const oidc_utils_1 = __nccwpck_require__(41);
 /**
  * The code to exit an action
@@ -448,8 +448,8 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.issueCommand = void 0;
 // We use any as a valid input type
 /* eslint-disable @typescript-eslint/no-explicit-any */
-const fs = __importStar(__nccwpck_require__(747));
-const os = __importStar(__nccwpck_require__(87));
+const fs = __importStar(__nccwpck_require__(147));
+const os = __importStar(__nccwpck_require__(37));
 const utils_1 = __nccwpck_require__(278);
 function issueCommand(command, message) {
     const filePath = process.env[`GITHUB_${command}`];
@@ -671,8 +671,8 @@ exports.PersonalAccessTokenCredentialHandler = PersonalAccessTokenCredentialHand
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const http = __nccwpck_require__(605);
-const https = __nccwpck_require__(211);
+const http = __nccwpck_require__(685);
+const https = __nccwpck_require__(687);
 const pm = __nccwpck_require__(443);
 let tunnel;
 var HttpCodes;
@@ -4330,7 +4330,7 @@ module.exports = __nccwpck_require__(35);
 
 
 
-module.exports = __nccwpck_require__(11).extend({
+module.exports = (__nccwpck_require__(11).extend)({
   implicit: [
     __nccwpck_require__(212),
     __nccwpck_require__(104)
@@ -4386,7 +4386,7 @@ module.exports = new Schema({
 
 
 
-module.exports = __nccwpck_require__(562).extend({
+module.exports = (__nccwpck_require__(562).extend)({
   implicit: [
     __nccwpck_require__(721),
     __nccwpck_require__(993),
@@ -5397,13 +5397,13 @@ module.exports = __nccwpck_require__(219);
 "use strict";
 
 
-var net = __nccwpck_require__(631);
-var tls = __nccwpck_require__(16);
-var http = __nccwpck_require__(605);
-var https = __nccwpck_require__(211);
-var events = __nccwpck_require__(614);
-var assert = __nccwpck_require__(357);
-var util = __nccwpck_require__(669);
+var net = __nccwpck_require__(808);
+var tls = __nccwpck_require__(404);
+var http = __nccwpck_require__(685);
+var https = __nccwpck_require__(687);
+var events = __nccwpck_require__(361);
+var assert = __nccwpck_require__(491);
+var util = __nccwpck_require__(837);
 
 
 exports.httpOverHttp = httpOverHttp;
@@ -5663,7 +5663,7 @@ exports.debug = debug; // for test
 
 /***/ }),
 
-/***/ 357:
+/***/ 491:
 /***/ ((module) => {
 
 "use strict";
@@ -5671,7 +5671,7 @@ module.exports = require("assert");
 
 /***/ }),
 
-/***/ 614:
+/***/ 361:
 /***/ ((module) => {
 
 "use strict";
@@ -5679,7 +5679,7 @@ module.exports = require("events");
 
 /***/ }),
 
-/***/ 747:
+/***/ 147:
 /***/ ((module) => {
 
 "use strict";
@@ -5687,7 +5687,7 @@ module.exports = require("fs");
 
 /***/ }),
 
-/***/ 605:
+/***/ 685:
 /***/ ((module) => {
 
 "use strict";
@@ -5695,7 +5695,7 @@ module.exports = require("http");
 
 /***/ }),
 
-/***/ 211:
+/***/ 687:
 /***/ ((module) => {
 
 "use strict";
@@ -5703,7 +5703,7 @@ module.exports = require("https");
 
 /***/ }),
 
-/***/ 631:
+/***/ 808:
 /***/ ((module) => {
 
 "use strict";
@@ -5711,7 +5711,7 @@ module.exports = require("net");
 
 /***/ }),
 
-/***/ 87:
+/***/ 37:
 /***/ ((module) => {
 
 "use strict";
@@ -5719,7 +5719,7 @@ module.exports = require("os");
 
 /***/ }),
 
-/***/ 622:
+/***/ 17:
 /***/ ((module) => {
 
 "use strict";
@@ -5727,7 +5727,7 @@ module.exports = require("path");
 
 /***/ }),
 
-/***/ 16:
+/***/ 404:
 /***/ ((module) => {
 
 "use strict";
@@ -5735,7 +5735,7 @@ module.exports = require("tls");
 
 /***/ }),
 
-/***/ 669:
+/***/ 837:
 /***/ ((module) => {
 
 "use strict";
@@ -5785,37 +5785,38 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
 const core = __nccwpck_require__(186);
-const fs = __nccwpck_require__(747)
+const fs = __nccwpck_require__(147);
 const yaml = __nccwpck_require__(917);
 
 async function run() {
-    try {
-        const file = core.getInput('file', { required: true });
-        const key = core.getInput('key', { required: false });
-        const delimiter = core.getInput('delimiter', { required: false });
-        const returnToOutputs = core.getInput('return_to_outputs', { required: false });
-        const esportToEnvs = core.getInput('export_to_envs', { required: false });
-        const content = yaml.load(fs.readFileSync(file, 'utf8'));
+  try {
+    const file = core.getInput("file", { required: true });
+    const key = core.getInput("key", { required: false });
+    const delimiter = core.getInput("delimiter", { required: false });
+    const returnToOutputs = core.getInput("return_to_outputs", {
+      required: false,
+    });
+    const esportToEnvs = core.getInput("export_to_envs", { required: false });
+    const content = yaml.load(fs.readFileSync(file, "utf8"));
 
-        if (key) {
-            const flattened_object = flattenObject(content)
-            core.setOutput("result", flattened_object[key]);
+    if (key) {
+      const flattened_object = flattenObject(content);
+      core.setOutput("result", flattened_object[key]);
+    } else {
+      const flattened_object = flattenObject(content, false, delimiter);
+      const keys = Object.keys(flattened_object);
+      keys.forEach((current) => {
+        if (flattened_object[current] != null) {
+          if (returnToOutputs.toLowerCase() == "true")
+            core.setOutput(current, flattened_object[current]);
+          if (esportToEnvs.toLowerCase() == "true")
+            core.exportVariable(current, flattened_object[current]);
         }
-        else {
-            const flattened_object = flattenObject(content, false, delimiter)
-            const keys = Object.keys(flattened_object)
-            keys.forEach(current => {
-                if (flattened_object[current] != null) {
-                    if (returnToOutputs)
-                        core.setOutput(current, flattened_object[current]);
-                    if (esportToEnvs)
-                        core.exportVariable(current, flattened_object[current]);
-                }
-            });
-        }
-    } catch (error) {
-        core.setFailed(error.message);
+      });
     }
+  } catch (error) {
+    core.setFailed(error.message);
+  }
 }
 
 // Code from Stackoverflow Post: https://stackoverflow.com/a/59787588
@@ -5825,27 +5826,32 @@ async function run() {
  * @param prefix String (Optional)  The prefix to add before each key, also used for recursion
  **/
 function flattenObject(ob, prefix = false, delimiter = ".", result = null) {
-    result = result || {};
+  result = result || {};
 
-    // Preserve empty objects and arrays, they are lost otherwise
-    if (prefix && typeof ob === 'object' && ob !== null && Object.keys(ob).length === 0) {
-        result[prefix] = Array.isArray(ob) ? [] : {};
-        return result;
-    }
-
-    prefix = prefix ? prefix + delimiter : '';
-
-    for (const i in ob) {
-        if (Object.prototype.hasOwnProperty.call(ob, i)) {
-            if (typeof ob[i] === 'object' && ob[i] !== null) {
-                // Recursion on deeper objects
-                flattenObject(ob[i], prefix + i, delimiter, result);
-            } else {
-                result[prefix + i] = ob[i];
-            }
-        }
-    }
+  // Preserve empty objects and arrays, they are lost otherwise
+  if (
+    prefix &&
+    typeof ob === "object" &&
+    ob !== null &&
+    Object.keys(ob).length === 0
+  ) {
+    result[prefix] = Array.isArray(ob) ? [] : {};
     return result;
+  }
+
+  prefix = prefix ? prefix + delimiter : "";
+
+  for (const i in ob) {
+    if (Object.prototype.hasOwnProperty.call(ob, i)) {
+      if (typeof ob[i] === "object" && ob[i] !== null) {
+        // Recursion on deeper objects
+        flattenObject(ob[i], prefix + i, delimiter, result);
+      } else {
+        result[prefix + i] = ob[i];
+      }
+    }
+  }
+  return result;
 }
 
 run();
