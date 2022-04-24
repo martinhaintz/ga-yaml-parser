@@ -2,11 +2,6 @@ const process = require("process");
 const cp = require("child_process");
 const path = require("path");
 const ip = path.join(__dirname, "index.js");
-const oldEnv = process.env;
-
-beforeEach(() => {
-  process.env = { ...oldEnv };
-});
 
 test("test parse action.yaml file", () => {
   process.env["INPUT_FILE"] = "action.yml";
@@ -24,7 +19,7 @@ test("test parse action.yaml file", () => {
 test("test parse Google AppEngine test.yaml file", () => {
   process.env["INPUT_FILE"] = "testfiles/test_gae.yaml";
   process.env["INPUT_DELIMITER"] = "_";
-  process.env["INPUT_EXPORT_TO_ENVS"] = true;
+  process.env["INPUT_EXPORT_TO_ENVS"] = "true";
 
   const result = cp.execSync(`node ${ip}`, { env: process.env }).toString();
 
@@ -48,7 +43,7 @@ test("test parse one parameter at Google AppEngine test.yaml file", () => {
 test("test parse Google AppEngine test.yaml file no export to envs", () => {
   process.env["INPUT_FILE"] = "testfiles/test_gae.yaml";
   process.env["INPUT_DELIMITER"] = "_";
-  process.env["INPUT_EXPORT_TO_ENVS"] = false;
+  process.env["INPUT_EXPORT_TO_ENVS"] = "false";
 
   const result = cp.execSync(`node ${ip}`, { env: process.env }).toString();
 
