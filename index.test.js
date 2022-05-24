@@ -6,7 +6,7 @@ const ip = path.join(__dirname, "index.js");
 test("test parse action.yaml file", () => {
   process.env["INPUT_FILE"] = "action.yml";
   process.env["INPUT_DELIMITER"] = ".";
-  process.env["INPUT_RETURN_TO_OUTPUTS"] = true;
+  process.env["INPUT_RETURN_TO_OUTPUTS"] = "true";
 
   const result = cp.execSync(`node ${ip}`, { env: process.env }).toString();
 
