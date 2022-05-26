@@ -29,7 +29,7 @@
     "js-yaml": "^4.1.0"
   },
   "devDependencies": {
-    "@vercel/ncc": "^0.33.1",
+    "@vercel/ncc": "^0.34.0",
     "eslint": "^8.0.0",
     "jest": "^28.1.0"
   }
