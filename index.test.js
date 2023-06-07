@@ -4,6 +4,7 @@ const path = require("path");
 const ip = path.join(__dirname, "index.js");
 
 test("test parse action.yaml file", () => {
+  process.env["GITHUB_OUTPUT"] = "";
   process.env["INPUT_FILE"] = "action.yml";
   process.env["INPUT_DELIMITER"] = ".";
   process.env["INPUT_RETURN_TO_OUTPUTS"] = "true";
@@ -17,6 +18,7 @@ test("test parse action.yaml file", () => {
 });
 
 test("test parse Google AppEngine test.yaml file", () => {
+  process.env["GITHUB_OUTPUT"] = "";
   process.env["INPUT_FILE"] = "testfiles/test_gae.yaml";
   process.env["INPUT_DELIMITER"] = "_";
   process.env["INPUT_EXPORT_TO_ENVS"] = "true";
@@ -32,6 +34,7 @@ test("test parse Google AppEngine test.yaml file", () => {
 });
 
 test("test parse one parameter at Google AppEngine test.yaml file", () => {
+  process.env["GITHUB_OUTPUT"] = "";
   process.env["INPUT_FILE"] = "./testfiles/test_gae.yaml";
   process.env["INPUT_KEY"] = "runtime";
 
@@ -41,6 +44,7 @@ test("test parse one parameter at Google AppEngine test.yaml file", () => {
 });
 
 test("test parse Google AppEngine test.yaml file no export to envs", () => {
+  process.env["GITHUB_OUTPUT"] = "";
   process.env["INPUT_FILE"] = "testfiles/test_gae.yaml";
   process.env["INPUT_DELIMITER"] = "_";
   process.env["INPUT_EXPORT_TO_ENVS"] = "false";
